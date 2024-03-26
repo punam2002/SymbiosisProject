@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<style>
+		.container{
+			text-align: center;
+			background-color: beige;
+		}
+		input{
+		
+			margin-left: 35%;
+			align-items: center;
+			align-self: center;
+		}
+	</style>
+</head>
+<body>
+  <div class="container">
+			<h1>Update Student</h1>
+			<form action="#" th:action="@{/Updation}" th:object="${student}" method="post">
+				<input type="text" th:field="*{Student_Name}" placeholder="Enter Student name" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{city}" placeholder="Enter City" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{contact}" placeholder="Enter Email" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{email}" placeholder="Enter Contact" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{institute}" placeholder="Enter Course" class="form-control mb-4 col-4">
+				<button type="submit" class="btn btn-info col-2">Update Student</button><br>
+				
+			</form>
+				<a th:href="@{/user-page}">Back To Student List</a><br>
+		</div>
+</body>
+</html>

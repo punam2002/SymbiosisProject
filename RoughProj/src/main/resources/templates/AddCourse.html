@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head xmlns:th="http://www.thymeleaf.org">
+		<title>Home</title>
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #0e2433;
+            background-image:url("Admin\ back.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 200%;
+            /* background-position-y: 80px;  */
+            color: white;
+            margin: 0;
+            padding: 0;
+        } 
+		.header {
+            /* background-color: black; */
+			height: 100px;
+            padding: 20px;
+            text-align: center;
+        }
+		.header h1 {
+            margin: 0;
+        }
+		.container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            /* background-color:black; */
+            border-radius: 5px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+        }
+.table{
+    border-color: black;width: 500px;
+    background-color: gray;
+}
+span{
+    position: absolute;
+  top: 40px;
+  right: 16px;
+  font-size: 18px;
+}
+
+
+	</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>New Course </h1>
+			<h2>Add New Course</h2>
+			<form action="#" th:action="@{/saveCourse}" th:object="${courses}" method="post"><br>
+				<input type="text" th:field="*{Coursename}" placeholder="Enter Course name" class="from-control mb-4 col-4"><br>
+				<input type="text" th:field="*{CourseLink}" placeholder="Enter Course Link" class="from-control mb-4 col-4"><br>
+				<input type="text" th:field="*{CourseDoc}" placeholder="Enter Course StudyMaterial" class="from-control mb-4 col-4"><br>
+				<button type="submit" class="btn btn-info col-2">Save Course</button><br>
+			</form>
+			<a th:href="@{/Home}">Back To Student List</a>
+		</div>
+	</body>
+</html>

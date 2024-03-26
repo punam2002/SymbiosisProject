@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	
+	<head xmlns:th="http://www.thymeleaf.org">
+		<title>Home</title>
+		
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		 <!-- ======= Services Section ======= -->
+    <section id="services" class="services bg-light">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Enrolled Courses</h2>
+        </div>
+        <div class="row">
+            <!-- Assuming List Of Courses is a list of course objects -->
+            <!-- Replace the placeholder content with dynamic data accordingly -->
+            <div class="col-md-6 col-lg-3 mb-4" th:each="courses: ${ListOfCourses}">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="bx bxl-dribbble"></i>
+                        <h4 class="card-title" th:text="${courses.Coursename}">Course Name</h4>
+                        <a class="btn btn-primary" th:href="${courses.CourseLink}">View Course</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Services Section -->
+
+	</body>
+</html>
